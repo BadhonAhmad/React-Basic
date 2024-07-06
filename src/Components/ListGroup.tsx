@@ -13,6 +13,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>NO items found</p>}
+
       <ul className="list-group">
         {items.map((item, index) => (
           <li
@@ -22,11 +23,10 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
                 : "list-group-item"
             }
             key={item}
-            onClick= {()=> {
+            onClick={() => {
               setItemSelected(index);
-              onSelectItem(item)
-            }
-          }
+              onSelectItem(item);
+            }}
           >
             {item}
           </li>
